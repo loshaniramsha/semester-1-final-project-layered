@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" prefHeight="774.0" prefWidth="1120.0" style="-fx-background-color: #bdc3c7; -fx-background-radius: 40;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.FactoryManage.controller.EmployeeController">
+   <children>
+      <Label layoutX="439.0" prefHeight="38.0" prefWidth="242.0" text="Employee">
+         <font>
+            <Font name="System Bold" size="52.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="424.0" prefHeight="293.0" prefWidth="1028.0" style="-fx-background-color: #f1f2f6; -fx-background-radius: 35;" />
+      <Label layoutX="60.0" layoutY="72.0" prefHeight="332.0" prefWidth="1007.0" style="-fx-background-color: #f1f2f6; -fx-background-radius: 35;" />
+      <ImageView fitHeight="52.0" fitWidth="55.0" layoutX="1043.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/img_27.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="76.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee id">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
+      <TextField fx:id="txtEmployeeId" layoutX="254.0" layoutY="103.0" prefHeight="31.0" prefWidth="242.0" promptText="enter id" style="-fx-background-radius: 20;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
+      <TextField fx:id="txtType" layoutX="254.0" layoutY="203.0" prefHeight="31.0" prefWidth="242.0" promptText="enter typ" style="-fx-background-radius: 20;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
+      <Text layoutX="82.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
+      <TextField fx:id="txtEmail" layoutX="742.0" layoutY="173.0" prefHeight="31.0" prefWidth="265.0" promptText="enter emaail" style="-fx-background-radius: 20;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
+      <Text layoutX="82.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
+      <TextField fx:id="txtName" layoutX="254.0" layoutY="153.0" prefHeight="31.0" prefWidth="242.0" promptText="enter name" style="-fx-background-radius: 20;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
+      <Text layoutX="621.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
+      <Text layoutX="76.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PhoneNumber">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
+      <TextField fx:id="txtPhoneNumber" layoutX="254.0" layoutY="252.0" prefHeight="31.0" prefWidth="242.0" promptText="enter mobile number" style="-fx-background-radius: 20;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
+      <Text layoutX="617.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UserId">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
+      <Text layoutX="616.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ScheduleId">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
+      <Button layoutX="668.0" layoutY="362.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="31.0" prefWidth="108.0" style="-fx-background-color: #FCAEAE; -fx-background-radius: 35;" text="Delete">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></Button>
+      <Button layoutX="796.0" layoutY="362.0" mnemonicParsing="false" onAction="#updateOnAction" prefHeight="31.0" prefWidth="97.0" style="-fx-background-color: #E0F4FF; -fx-background-radius: 35;" text="Update" textFill="#2f2a2a">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></Button>
+      <Button layoutX="553.0" layoutY="100.0" mnemonicParsing="false" onAction="#searchOnAction" prefHeight="24.0" prefWidth="185.0" style="-fx-background-color: #dfe4ea; -fx-background-radius: 35;" text="Search">
+         <cursor>
+            <Cursor fx:constant="WAIT" />
+         </cursor></Button>
+      <Button layoutX="917.0" layoutY="362.0" mnemonicParsing="false" onAction="#clearOnAction" prefHeight="31.0" prefWidth="108.0" style="-fx-background-color: #7f8fa6; -fx-background-radius: 35;" text="Clear">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></Button>
+      <TableView fx:id="tblEmployee" layoutX="97.0" layoutY="458.0" prefHeight="225.0" prefWidth="942.0">
+        <columns>
+          <TableColumn fx:id="colEmoId" prefWidth="113.0" text="EmploId" />
+          <TableColumn fx:id="colName" prefWidth="109.0" text="Name" />
+            <TableColumn fx:id="colTelNum" prefWidth="160.0" text="TelNum:" />
+            <TableColumn fx:id="colType" prefWidth="137.0" text="Type" />
+            <TableColumn fx:id="colEmail" prefWidth="161.0" text="Email" />
+            <TableColumn fx:id="colUserId" prefWidth="130.0" text="UserId" />
+            <TableColumn fx:id="colScheduleId" prefWidth="131.0" text="ScheduleId" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="cmbUserId" layoutX="749.0" layoutY="228.0" prefHeight="31.0" prefWidth="258.0" promptText="select user id" style="-fx-background-radius: 20;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <ComboBox fx:id="cmbScheduleId" layoutX="749.0" layoutY="283.0" prefHeight="31.0" prefWidth="258.0" promptText="select schedul id" style="-fx-background-radius: 20;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <Button layoutX="548.0" layoutY="362.0" mnemonicParsing="false" onAction="#SaveOnAction" prefHeight="31.0" prefWidth="97.0" style="-fx-background-color: #B4BDFF; -fx-background-radius: 35;" text="Save">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></Button>
+      <ImageView fitHeight="31.0" fitWidth="55.0" layoutX="637.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="18.0" layoutY="16.0" onMouseClicked="#lblBackOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/img_32.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
