@@ -104,7 +104,7 @@ public void initialize() throws Exception {
         String employeeId=cmbEmployeeId.getValue().toString();
         String completeAmount=txtCompletAmount.getText();
         Madeproductdto Dto=new Madeproductdto(targetAmount,productId,employeeId,completeAmount);
-        boolean isSaved=madeproductBO.saveMadeProduct(Dto);
+        boolean isSaved=madeproductBO.saveMadeproduct(Dto);
         if (isSaved){
             new Alert(Alert.AlertType.CONFIRMATION,"Saved").show();
             clearField();
@@ -138,7 +138,7 @@ public void initialize() throws Exception {
     public void searchOnAction(ActionEvent event)  {
     String productId=cmbProductId.getValue().toString();
     try {
-        Madeproductdto Dto=madeproductBO.searchMadeproduct(productId);
+        Madeproductdto Dto=madeproductBO.searchMadeProduct(productId);
         if (Dto!=null){
             cmbTagetamount.getItems().add(Dto.getTargetAmount());
             cmbProductId.getItems().add(Dto.getProductId());
@@ -159,7 +159,7 @@ public void initialize() throws Exception {
         String employeeId=cmbEmployeeId.getValue().toString();
         String completeAmount=txtCompletAmount.getText();
         Madeproductdto Dto=new Madeproductdto(targetAmount,productId,employeeId,completeAmount);
-        boolean isUpdated=madeproductBO.updateMadeProduct(Dto);
+        boolean isUpdated=madeproductBO.updateMadeproduct(Dto);
         if (isUpdated){
             new Alert(Alert.AlertType.CONFIRMATION,"Updated").show();
             clearField();

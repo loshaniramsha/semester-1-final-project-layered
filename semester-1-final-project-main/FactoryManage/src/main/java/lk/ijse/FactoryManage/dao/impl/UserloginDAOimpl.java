@@ -1,5 +1,6 @@
 package lk.ijse.FactoryManage.dao.impl;
 
+import lk.ijse.FactoryManage.dao.SQLUtil;
 import lk.ijse.FactoryManage.dao.custom.UserloginDAO;
 import lk.ijse.FactoryManage.db.DbConection;
 import lk.ijse.FactoryManage.dto.UserDto;
@@ -15,12 +16,8 @@ public class UserloginDAOimpl implements UserloginDAO {
         if (userloginDto.getPassword() == null) {
             return false;
         }
-        Connection connection= DbConection.getInstance().getConnection();
-        String sql="SELECT * FROM user WHERE name=?";
-        PreparedStatement pstm=connection.prepareStatement(sql);
-        pstm.setObject(1,userloginDto.getUserName());
         UserDto findedUser=null;
-        ResultSet rst=pstm.executeQuery();
+        ResultSet rst= SQLUtil.execute("SELECT * FROM user WHERE name=?",userloginDto.getUserName());
         if(rst.next()){
             findedUser=new UserDto(
               rst.getString(1),

@@ -17,5 +17,7 @@ public interface ProductBO extends SuperBO {
     ProductDto searchProduct(String productId)  throws Exception;
     List<ProductDto> getAllProduct() throws Exception;
      boolean updateQuantity(ExportableDto dto) throws Exception;
+     boolean saveMadeProduct(Madeproductdto dto) throws Exception;
+    boolean updateMadeProduct(Madeproductdto dto) throws Exception;
 
 }

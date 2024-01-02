@@ -67,7 +67,7 @@ ProductDAO productDAO= (ProductDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory
 //        pstm.setObject(3,dto.getEmployeeId());
 //        pstm.setObject(4,dto.getCompleteAmount());
 //        boolean isSaved=pstm.executeUpdate()>0;
-        return SQLUtil.execute("INSERT INTO madeproduct VALUES(?,?,?,?)",dto.getTargetAmount(),dto.getProductId(),dto.getEmployeeId(),dto.getCompleteAmount());
+        return productDAO.saveMadeProduct(dto)  ;
     }
 
     public boolean updateMadeProduct(Madeproductdto dto) throws Exception{
@@ -80,7 +80,7 @@ ProductDAO productDAO= (ProductDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory
 //        pstm.setObject(3,dto.getProductId());
 //     //   pstm.setObject(4,dto.getEmployeeId());
 //        boolean isUpdated=pstm.executeUpdate()>0;
-        return SQLUtil.execute("UPDATE madeproduct SET targetAmount=?,completeAmount=? WHERE productId=?",dto.getTargetAmount(),dto.getCompleteAmount(),dto.getProductId());
+        return productDAO.updateMadeProduct(dto);
     }
     //    public  List<Product> getAll() throws Exception {
 //        Connection connection= DbConection.getInstance().getConnection();

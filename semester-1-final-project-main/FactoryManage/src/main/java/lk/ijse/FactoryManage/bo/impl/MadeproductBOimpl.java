@@ -14,42 +14,21 @@ public class MadeproductBOimpl implements MadeproductBO {
 
     @Override
     public boolean saveMadeproduct(Madeproductdto dto) throws Exception {
-        return false;
+        return madeproductDAO.save(new Madeproduct(dto.getProductId(),dto.getTargetAmount(),dto.getEmployeeId(),dto.getCompleteAmount()));
     }
 
-    @Override
-    public boolean deleteMadeproduct(String productId) throws Exception {
-        return false;
-    }
 
     @Override
     public boolean updateMadeproduct(Madeproductdto dto) throws Exception {
-        return false;
+        return madeproductDAO.update(new Madeproduct(dto.getProductId(),dto.getTargetAmount(),dto.getEmployeeId(),dto.getCompleteAmount()));
     }
 
-    @Override
-    public Madeproductdto searchMadeproduct(String productId) throws Exception {
-        return null;
-    }
 
-    @Override
-    public List<Madeproductdto> getAllMadeproduct() throws Exception {
-        return null;
-    }
-
-    @Override
-    public boolean saveMadeProduct(Madeproductdto dto) throws Exception {
-        return false;
-    }
-
-    public  boolean deleteMadeProduct(String productId) throws Exception{
+    public  boolean deleteMadeproduct(String productId) throws Exception{
         return madeproductDAO.delete(productId);
     }
 
-    @Override
-    public boolean updateMadeProduct(Madeproductdto dto) throws Exception {
-        return false;
-    }
+
 
        public Madeproductdto searchMadeProduct(String productId) throws Exception{
         Madeproduct madeproduct=madeproductDAO.search(productId);
@@ -57,7 +36,7 @@ public class MadeproductBOimpl implements MadeproductBO {
     }
 
 
-    public List<Madeproductdto> getAllMadeProduct()throws Exception {
+    public List<Madeproductdto> getAllMadeproduct()throws Exception {
         List<Madeproduct> list = madeproductDAO.getAll();
         List<Madeproductdto> madeproductdtos = new ArrayList<>();
         for (Madeproduct madeproduct : list) {
