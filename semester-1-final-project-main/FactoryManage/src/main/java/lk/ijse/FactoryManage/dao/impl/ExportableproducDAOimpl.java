@@ -72,7 +72,7 @@ public class ExportableproducDAOimpl implements ExportableproductDAO {
       ResultSet rst=SQLUtil.execute("SELECT * FROM exportableproduct");
         List<Exportable> list=new ArrayList<>();
         while (rst.next()){
-            Exportable exportable=new Exportable(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4),rst.getString(5));
+            list.add(new Exportable(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4),rst.getString(5)));
           //  list.add(new Exportable(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4),rst.getString(5)));
         }
         return list;

@@ -78,7 +78,7 @@ public class UserDAOimpl implements UserDAO {
         ResultSet rst=SQLUtil.execute("SELECT * FROM user");
         ArrayList<User> dtoList=new ArrayList<>();
         while (rst.next()){
-            User entity=new User(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4),rst.getString(5));
+            dtoList.add(new User(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4),rst.getString(5)));
 //            UserDto dto=new UserDto();
 //            dto.setUserId(rst.getString(1));
 //            dto.setPost(rst.getString(2));

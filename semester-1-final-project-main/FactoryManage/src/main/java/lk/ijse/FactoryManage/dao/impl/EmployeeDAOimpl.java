@@ -87,7 +87,7 @@ public class EmployeeDAOimpl implements EmployeeDAO  {
         ResultSet rst = SQLUtil.execute("SELECT * FROM employee");
         List<Employee> list = new ArrayList<>();
         while (rst.next()) {
-            Employee entity = new Employee(rst.getString(1), rst.getString(2), rst.getString(3), rst.getString(4), rst.getString(5), rst.getString(6), rst.getString(7));
+            list.add(new Employee(rst.getString(1), rst.getString(2), rst.getString(3), rst.getString(4), rst.getString(5), rst.getString(6), rst.getString(7)));
 //            String employeeId = rst.getString(1);
 //            String type = rst.getString(2);
 //            String name = rst.getString(3);

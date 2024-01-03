@@ -69,7 +69,7 @@ public class SupplierDAOimpl implements SupplierDAO {
         ResultSet rst=SQLUtil.execute("SELECT * FROM supplier");
         List<Supplier> list=new ArrayList<>();
         while (rst.next()){
-            Supplier entity=new Supplier(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4));
+            list.add(new Supplier(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4)));
             //list.add(new Supplier(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4)));
         }
         return list;

@@ -76,7 +76,7 @@ public class ScheduleDAOimpl implements ScheduleDAO {
 //            dto.setDate(rst.getString(3));
 //            dto.setPlane(rst.getString(4));
 //            allSchedules.add(dto);
-            Schedule entity=new Schedule(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4));
+            allSchedules.add(new Schedule(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4)));
         }
         return allSchedules;
     }

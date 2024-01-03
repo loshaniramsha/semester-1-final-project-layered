@@ -92,7 +92,7 @@ public class CountmaterialDAOimpl implements CountmaterialDAO {
 //            String productId = rst.getString(2);
 //            String ammountuse = rst.getString(3);
 //            list.add(new Countmaterial(materialId, productId, ammountuse));
-            Countmaterial entity = new Countmaterial(rst.getString(1), rst.getString(2), rst.getString(3));
+            list.add( new Countmaterial(rst.getString(1), rst.getString(2), rst.getString(3)));
         }
         return list;
     }

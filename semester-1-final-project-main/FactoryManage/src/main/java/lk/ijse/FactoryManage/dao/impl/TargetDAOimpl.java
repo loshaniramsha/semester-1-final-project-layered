@@ -69,7 +69,7 @@ public class TargetDAOimpl  implements TargetDAO {
         ResultSet rst = SQLUtil.execute("SELECT * FROM target");
         List<Target> allTargets = new ArrayList<>();
         while (rst.next()) {
-            Target entity=new Target(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4));
+            allTargets.add(new Target(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4)));
 //            TargetDto dto = new TargetDto();
 //            dto.setTargetId(rst.getString(1));
 //            dto.setTargetAmount(rst.getString(2));

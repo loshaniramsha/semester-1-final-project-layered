@@ -52,8 +52,8 @@ public class MadeproductDAOimpl implements MadeproductDAO {
         ResultSet rst=SQLUtil.execute("SELECT * FROM madeproduct");
         List<Madeproduct> list=new ArrayList<>();
         while (rst.next()){
-            Madeproductdto entity=new Madeproductdto(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4));
-            //list.add(new Madeproduct(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4)));
+          //  list.add(new Madeproductdto(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4));
+            list.add(new Madeproduct(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4)));
         }
         return list;
     }
