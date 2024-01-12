@@ -208,7 +208,8 @@ public class ExportableproductController {
 
     public void searchOnAction(ActionEvent event) {
         String targetId=cmbTargetId.getValue().toString();
-       try {
+        System.out.println(targetId);
+        try {
            ExportableDto exportableDto =  exportableproductBO.searchExportable(targetId);
            if (exportableDto != null) {
                cmbProductId.setValue(exportableDto.getProductId());

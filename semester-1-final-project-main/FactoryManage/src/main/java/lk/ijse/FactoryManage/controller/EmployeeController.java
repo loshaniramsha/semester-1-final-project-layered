@@ -59,7 +59,7 @@ public class EmployeeController {
     }
 
     private void loardAllEmployees() {
-       // var model = new EmployeeModel();
+     //   var model =  employeeBO();
         ObservableList<EmployeeDto> obList = FXCollections.observableArrayList();
         try {
             List<EmployeeDto> dtoList = employeeBO.getAllEmployee();
@@ -76,10 +76,11 @@ public class EmployeeController {
 
     private void setCellValueFactory() {
         colEmoId.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
+        colType.setCellValueFactory(new PropertyValueFactory<>("type"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         //colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colTelNum.setCellValueFactory(new PropertyValueFactory<>("phone"));
-        colType.setCellValueFactory(new PropertyValueFactory<>("type"));
+//        colType.setCellValueFactory(new PropertyValueFactory<>("type"));
        // colType.setCellValueFactory(new PropertyValueFactory<>("type"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         colUserId.setCellValueFactory(new PropertyValueFactory<>("userId"));

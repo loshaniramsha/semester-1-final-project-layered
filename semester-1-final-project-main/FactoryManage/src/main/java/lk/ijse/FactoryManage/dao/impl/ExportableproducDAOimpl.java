@@ -59,10 +59,13 @@ public class ExportableproducDAOimpl implements ExportableproductDAO {
 //        PreparedStatement pstm=connection.prepareStatement(sql);
 //        pstm.setObject(1,targetId);
         ResultSet rst = SQLUtil.execute("SELECT * FROM exportableproduct WHERE targetId=?", targetId);
+
+        Exportable exportable = null;
         if (rst.next()){
            // return new Exportable(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4),rst.getString(5));
+            exportable =new Exportable(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4),rst.getString(5));
         }
-        return new Exportable(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4),rst.getString(5));
+        return exportable;
     }
 
     public List<Exportable> getAll() throws Exception {

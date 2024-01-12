@@ -26,7 +26,7 @@ public class EmployeeDAOimpl implements EmployeeDAO  {
 //        pstm.setObject(5, dto.getPhone());
 //       pstm.setObject(6,dto.getUserId());
 //       pstm.setObject(7,dto.getScheduleId());
-        boolean isSaved = SQLUtil.execute("INSERT INTO employee VALUES(?,?,?,?,?,?,?)",dto.getEmployeeId(),dto.getName(),dto.getType(),dto.getEmail(),dto.getPhone(),dto.getUserId(),dto.getScheduleId());
+        boolean isSaved = SQLUtil.execute("INSERT INTO employee VALUES(?,?,?,?,?,?,?)",dto.getEmployeeId(),dto.getType(),dto.getName(),dto.getEmail(),dto.getPhone(),dto.getUserId(),dto.getScheduleId());
         return isSaved;
     }
 
@@ -66,7 +66,8 @@ public class EmployeeDAOimpl implements EmployeeDAO  {
 //       // EmployeeDto employeeDto = null;
 //        Employee employeeDto = null;
         ResultSet rst = SQLUtil.execute("SELECT * FROM employee WHERE employeeId=?",employeeId);
-        while (rst.next()) {
+//        while (rst.next()) {
+        if (rst.next()) {
 //            String type = rst.getString(2);
 //            String name = rst.getString(3);
 //            String email = rst.getString(4);
@@ -74,8 +75,10 @@ public class EmployeeDAOimpl implements EmployeeDAO  {
 //            String userId = rst.getString(6);
 //            String scheduleId = rst.getString(7);
 //            employeeDto = new Employee(employeeId, type, name, email, phone, userId, scheduleId);
+            return new Employee(rst.getString(1), rst.getString(2), rst.getString(3), rst.getString(4), rst.getString(5), rst.getString(6), rst.getString(7));
         }
-        return new Employee(rst.getString(1), rst.getString(2), rst.getString(3), rst.getString(4), rst.getString(5), rst.getString(6), rst.getString(7));
+        return null;
+//        return new Employee(rst.getString(1), rst.getString(2), rst.getString(3), rst.getString(4), rst.getString(5), rst.getString(6), rst.getString(7));
     }
 
 

@@ -46,14 +46,15 @@ public class CountmaterialDAOimpl implements CountmaterialDAO {
 //        pstm.setObject(1, matirialId);
 //        CountmaterialDto countmaterialDto = null;
         ResultSet rst = SQLUtil.execute("SELECT * FROM countmaterial WHERE materialId=?", matirialId);
-       while (rst.next()) {
+       if (rst.next()) {
 //            String materialId = rst.getString(1);
 //            String productId = rst.getString(2);
 //            String ammountuse = rst.getString(3);
 //            countmaterialDto = new CountmaterialDto(materialId, productId, ammountuse);
+           return new Countmaterial(rst.getString(1), rst.getString(2), rst.getString(3));
        }
-        return new Countmaterial(rst.getString(1), rst.getString(2), rst.getString(3));
 
+    return null;
     }
 
 

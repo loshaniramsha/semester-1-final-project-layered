@@ -15,7 +15,7 @@ public class EmployeeBOimpl implements EmployeeBO {
     EmployeeDAO employeeDAO= (EmployeeDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.EMPLOYEE);
 
     public  boolean saveEmployee(EmployeeDto dto) throws Exception {
-        return employeeDAO.save(new Employee(dto.getEmployeeId(),dto.getName(),dto.getType(),dto.getEmail(),dto.getPhone(),dto.getUserId(),dto.getScheduleId()));
+        return employeeDAO.save(new Employee(dto.getEmployeeId(),dto.getType(),dto.getName(),dto.getEmail(),dto.getPhone(),dto.getUserId(),dto.getScheduleId()));
     }
 
 
